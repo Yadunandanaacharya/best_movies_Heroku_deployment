@@ -1,0 +1,53 @@
+*) Login to Heroku create one app there, and change build packages to Python.
+
+*) Create one local git repository, copy contents inside of article project
+from main django project directory and paste it in git repository named 
+m-article
+-> When you create project in Django it will be created like
+1)-> articleproject
+  a)->articleapp
+  b)->accountapp
+  c)->articleproject
+  d)->manage.py
+
+Here you should not copy 1) and paste it in m-article instead you need to copy 
+a, b, c, d and paste it inside m-article git repository.
+
+*)Open you visoual studio code 
+D:\GITHUB_REPO_donot_add_delete\m-article>
+In above directory type->  heroku login.
+In browser press on accept. 
+
+*) heroku git:remote -a movie-article
+here movie-article is name of app I have created inside heroku website.
+
+*) In visual studio code type: pip freeze > requirements.txt
+Inside that it will include all packages you have installed in python.
+It will be better if you use virtual environment since only less packages will be 
+there which takes less time to install packages.
+
+*) Create file anmed Procfile inside that
+type: web: gunicorn articleproject.wsgi where articleproject is name of project.
+
+*) runtime.txt check whether it is important or not by deleting it once.
+
+*) Now in settings you need to make changes to path of static file.
+Always use static named folder to keep images and style.css file.
+
+*)STATIC_ROOT = os.path.join('BASE_DIR','staticfiles')
+paste this above STATIC_URL
+
+*) ALLOWED_HOSTS = ['movie-article.herokuapp.com','127.0.0.1']
+Here you have mentioned heroku app name where you will get it in heroku 
+website after pressing open app you will get above link and another one is server 
+name.
+
+*) important thing above ALLOWED_HOSTS Debug option is there if you set
+it to False you won't be able to see any images web page when you open with local server
+after pressing python manage.py runserver, as well as when you 
+deploy project in heroku after that when you open your project that time also.
+SO better
+"keep Debug = False" always.
+
+*) MIDDLEWARE:
+'whitenoise.middleware.WhiteNoiseMiddleware',

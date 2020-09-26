@@ -1,0 +1,198 @@
+*) for body tag: for background image, make background image blur:linear-gradient
+
+cover: to cover full web page.
+
+body{
+    background-color:#0f121f;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5))  ,url(beach.jpg);
+    background-size: cover;
+    color: #fff;
+}
+
+*)
+wrapper under header:
+For keeping all elements from left side to somewhat middle
+.wrapper{
+    max-width:900px;
+    margin: 0 auto;
+}
+
+*)
+To move contnets of {% block content %} {% endblock %} to middle
+contents of app will come in middle example: article_list.html contents.
+Example: ""Movies List" will come to center
+div.wrapper h1{
+    text-align: center;
+    margin: 100px auto;
+}
+
+*) To move logout and create button to split from logo and move to right side.
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+*)
+Now create logout and login are present inside nav tag.
+Now to move them to right end side.
+
+*) TO make Logout and Create button look in single line.
+nav li{
+    display: inline-block;
+}
+
+*) To separate Logout and Create button from space.
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+*)To make Logout button: background no color.
+color of font: white
+When you move cursor logout mouse pointer will look different.
+No white border will be there
+font-size will be 1.2em
+nav button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size:1.2em ;
+}
+
+
+*) You need to use html tags properly or else you face lot of difficulties because
+Whatever style you apply for any div or nav or body tags it won't apply for
+whatever it should apply.
+
+{% block content %}
+
+<h1>Movies List</h1>
+<div class="articles"></div>
+    {% for i in my_articles %}
+    <div class="i">
+        <h2><a href="{% url 'article_lists:details' slug=i.slug %}">{{i.title}}</a></h2>
+        <p>{{slug}}</p>
+        <p>{{i.snippet}}</p>
+        <p>{{i.date}}</p> 
+    </div>
+    {% endfor %}
+</div>
+In above example I have not closed </div> after {% endfor %}
+:<div class="articles"></div>
+Due to this style is not applicable for entire div tag.
+
+
+*) .my_articles is class name in article_list but because of not using </div>
+at the end it was not taking any css style
+grid will make articles look in single downward column style.
+grid-template-columns will make them look in box
+.my_articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+here 1fr you can change them and see how they will look 
+2rows 3column boxes if 2fr 1fr 1fr you'll use.
+grid-gap: 30px;: gap between grid boxes.
+
+*)
+.i{
+    padding: 10px;
+    border: 2px solid rgb(241, 253, 223);
+    position: relative;
+    padding-bottom: 30px;
+    box-shadow: 0 14px 28px rgba(5, 2, 2, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+Here 'i' div tag class name for each article 
+padding: 10px;: gives gap between texts of article and outer box.
+border: border
+padding-bottom: increases height of box.
+box-shadow: you'll see shadow of article boxes.
+
+
+*).article-detail .article_detail{
+    padding: 0px;
+}
+.article-detail .article_detail img{
+    max-width: 100%;
+}
+.article_detail h2{
+    text-align: center;
+    font-size: 2em;
+    margin: 20px auto;
+}
+
+changing styles of article_detail.html here article-detail is main div tag.
+article_detail is sub div tag. Changing gap throgh padding 0px for image and texts
+h2 contains title of article keeping it center and changing its font to 2em
+keeping gap between title and image.
+
+
+*) Styling for author in article_list
+.i .authoris{
+    padding: 10px;
+    background: #00dba0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: #0f;
+
+
+*) .site-form is applicable for all kinds of form
+.site-form{
+    margin-top: 60px;
+    border: 1px solid #00dba0;
+    padding: 20px;
+}
+
+*)
+.site-form input, .site-form textarea{
+    display: block;
+}
+All input tabs will look blockwise
+
+
+
+*)
+a.highlight{
+    border: 1px solid #00dba0;
+        padding: 10px;
+        border-radius: 4px;
+        color: #00dba0;
+}
+for the New Article in base_layout.html
+
+*) Go to signup form right click on password text-> press inspect.
+You'll see in web page all html tags appearance.
+In that you can see helptext.
+Use it.
+.helptext, .helptext ul{
+    margin: 0 auto  20px;
+    color: #bbb;
+    font-size: 0.9em;
+    display: block;
+}
+
+*) when you type wrng password in signup or same user, dialogue appears that 
+user exists. So right click on that inn html tags you'll see errorlist
+.errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #ff5722;
+    color: #ff5722;
+    margin: 10px 0;
+}
+
+.errorlist{
+    padding: 0;
+}
+
+*) Automatic slug generation
+slugify.js file in assets folder.
+
+
+

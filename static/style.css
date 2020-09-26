@@ -1,0 +1,145 @@
+body{
+    background-color:#0f121f;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5))  ,url(beach.jpg);
+    background-size: cover;
+    color: #fff;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    margin: 0;
+}
+
+a, a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+.wrapper{
+    max-width:900px;
+    margin: 0 auto;
+}
+
+div.wrapper h1{
+    text-align: center;
+    margin: 100px auto;
+    
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+nav{
+    justify-self: end;
+}
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size:1.2em ;
+}
+
+.my_articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+.i{
+    padding: 10px;
+    border: 2px solid rgb(241, 253, 223);
+    position: relative;
+    padding-bottom: 30px;
+    box-shadow: 0 14px 28px rgba(5, 2, 2, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.my_articles h2{
+    font-size: 1.3em;
+}
+
+.i .authoris{
+    padding: 10px;
+    background: #00dba0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: #0f;
+}
+.article-detail .article_detail{
+    padding: 0px;
+}
+.article-detail .article_detail img{
+    max-width: 100%;
+}
+
+.article_detail h2{
+    text-align: center;
+    font-size: 2em;
+    margin: 20px auto;
+}
+
+.article_detail p{
+    text-align: right;
+}
+
+/* for login, signup and forms */
+.site-form{
+    margin-top: 60px;
+    border: 1px solid #00dba0;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+
+}
+
+a.highlight{
+    border: 1px solid #00dba0;
+        padding: 10px;
+        border-radius: 4px;
+        color: #00dba0;
+}
+.helptext, .helptext ul{
+    margin: 0 auto  20px;
+    color: #bbb;
+    font-size: 0.9em;
+    display: block;
+}
+
+.errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #ff5722;
+    color: #ff5722;
+    margin: 10px 0;
+}
+
+.errorlist{
+    padding: 0;
+}
+
+.site-form input[type='submit']{
+    background: #00dba0;
+    border: 0;
+    color: #fff;
+    font-size: 1.2em;
+    border-radius: 4px;
+    margin: 10px 0;;
+    }
+

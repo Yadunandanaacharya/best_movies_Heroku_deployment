@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<h1>Best Movies List</h1>
+
+<div class="my_articles">
+    {% for i in my_articles %}
+    <div class="i">
+        <h2><a href="{% url 'article_lists:details' slug=i.slug %}">{{i.title}}</a></h2>
+        <p>{{slug}}</p>
+        <p>{{i.snippet}}</p>
+        <p>{{i.date}}</p> 
+        <p class="authoris">Added by {{i.author.username}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+    {% endblock %}
