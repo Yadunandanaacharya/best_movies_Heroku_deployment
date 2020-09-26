@@ -26,7 +26,7 @@ SECRET_KEY = '=g#_7@o@seq!!gyi5-qi!dq5_h0hvn!pqoi^km)h&wkq+v2103'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['movie-article.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['best-movies-list.herokuapp.com','127.0.0.1']
 # ALLOWED_HOSTS = []
 
 
