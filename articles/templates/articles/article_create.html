@@ -3,6 +3,7 @@
 {% block content %}
 <div class="create-article">
    
+    
     <form class='site-form' action="{% url 'article_lists:create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{forms_are}}
